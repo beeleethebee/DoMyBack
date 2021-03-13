@@ -1,0 +1,8 @@
+<div class="m-1 btn btn-outline-secondary" data-controller="sound">
+  <%= button_to "x", sound, method: :delete, data: {}, class: "close border-top-0" %>
+  <div data-action="click->sound#play">
+    <%= audio_tag rails_blob_path sound.sound %>
+    <%= image_tag "/assets/play.png" %>
+    <p><%= sound.name %></p>
+  </div>
+</div>

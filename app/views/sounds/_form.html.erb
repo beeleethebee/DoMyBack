@@ -1,0 +1,17 @@
+<div data-controller="record" class="d-flex justify-content-between w-50">
+  <div class="cursor" data-action="click->record#record">
+    <%= image_tag "/assets/play.png" %>
+  </div>
+
+  <div class="cursor" data-action="click->record#pause">
+    <%= image_tag "/assets/pause.png" %>
+  </div>
+
+  <div class="cursor" data-action="click->record#save">
+    <%= image_tag "/assets/stop.png" %>
+  </div>
+
+  <%= form_with url: sound_index_path, method: 'post', html: {class: "d-none"} do |form| %>
+    <%= form.file_field 'sound', "data-record-target": "input"%>
+  <% end %>
+</div>

@@ -1,0 +1,40 @@
+<h1 class="text-center">MyRecorder</h1>
+
+<div class="d-flex justify-content-center">
+  <%= render partial: 'sounds/form' %>
+</div>
+<hr>
+
+<div class="d-flex flex-wrap">
+  <%= render @sounds %>
+</div>
+
+
+
+<!--<script>-->
+<!--  const dT = new ClipboardEvent('').clipboardData || new DataTransfer();-->
+<!--  const chunks = [];-->
+<!--  const input = document.getElementById('sound');-->
+<!--  navigator.mediaDevices.getUserMedia({audio: true})-->
+<!--    .then(stream => {-->
+<!--        const mediaRecorder = new MediaRecorder(stream, {type: 'audio/wav'});-->
+<!--        console.log('starting');-->
+<!--        mediaRecorder.start();-->
+<!--        mediaRecorder.addEventListener('dataavailable', e => {-->
+<!--            chunks.push(e.data);-->
+<!--        });-->
+<!--        setTimeout(() => {-->
+<!--            console.log('Stop');-->
+<!--            mediaRecorder.stop();-->
+<!--            mediaRecorder.addEventListener('stop', () => {-->
+<!--                let audioBlob = new Blob(chunks, {type: 'audio'});-->
+<!--                let audioUrl = URL.createObjectURL(audioBlob);-->
+<!--                console.log(audioUrl);-->
+<!--                let file = new File([audioBlob], 'audio.wav', {type: 'audio/wav'});-->
+<!--                dT.items.add(file);-->
+<!--                input.files = dT.files;-->
+<!--                input.parentNode.submit();-->
+<!--            })-->
+<!--        }, 1000);-->
+<!--    })-->
+<!--</script>-->
